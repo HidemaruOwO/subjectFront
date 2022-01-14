@@ -1,0 +1,80 @@
+@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap";
+
+body {
+  max-width: 100%;
+  min-height: 100%;
+  margin: 0;
+  font-family: noto sans jp, sans-serif;
+  text-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.5);
+}
+img {
+  max-width: 100%;
+}
+/*初期値からずれたらブラーをかける(rgba)*/
+header {
+  width: 100%;
+  height: 82px;
+  position: fixed;
+  z-index: 2;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation-name: topDrop;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes topDrop {
+  from {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header a {
+  text-decoration: none;
+  color: #000000;
+}
+header a:hover {
+  text-decoration: underline;
+  color: #000000;
+}
+header ul {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  overflow: hidden;
+}
+header li {
+  float: left;
+}
+.icon {
+  margin-left: 30px;
+  margin-top: -2px;
+}
+.navigation {
+  margin-right: 30px;
+  display: inline;
+  float: right;
+  margin-top: 26.5px;
+}
+main a {
+  text-decoration: none;
+  color: #0d6efd;
+}
+main a:hover {
+  text-decoration: underline;
+  color: #0d6efd;
+}
+footer {
+  height: 21px;
+  background-color: #eee;
+  text-align: center;
+}
+footer small {
+  vertical-align: middle;
+  display: inline-block;
+}
