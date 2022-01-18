@@ -120,6 +120,9 @@ header li {
     opacity: 1;
   }
 }
+.el-box a:hover {
+  text-decoration: none;
+}
 .aboutContainer h4 {
   margin-top: -2px;
   text-align: center;
