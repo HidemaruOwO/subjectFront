@@ -1,0 +1,228 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <script>hljs.highlightAll();</script>
+</head>
+
+<body>
+  <p>スクロールにしか使われないBootStrapくんかわいそう....</p>
+  <h2>index.html</h2>
+  <hr>
+  <pre>
+      <code class="html">&lthtml lang=&quotja&quot&gt
+      &lthead&gt
+      &lttitle&gtちょっとモダンなサイト&lt/title&gt
+      &ltlink rel=&quotstylesheet&quot href=&quotcss/bootstrap.min.css&quot
+      integrity=&quotsha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC&quot
+      crossorigin=&quotanonymous&quot&gt
+      &ltlink rel=&quotstylesheet&quot href=&quotcss/renner.css&quot&gt
+      &ltlink rel=&quotstylesheet&quot href=&quotcss/main.css&quot&gt
+      &ltlink rel=&quoticon&quot href=&quotimage/favicon.svg&quot type=&quotimage/svg+xml&quot&gt
+      &ltmeta name=&quotviewport&quot content=&quotwidth=device-width,initial-scale=1&quot&gt
+      &ltnoscript&gt
+      &ltmeta http-equiv=&quotrefresh&quot content=&quot0;URL=/noscript&quot&gt
+      &lt/noscript&gt
+      &lt/head&gt
+      &ltbody&gt
+      &ltheader&gt
+      &ltul&gt
+      &ltli class=&quoticon&quot&gt&ltimg src=&quotimage/favicon.svg&quot height=&quot100%&quot&gt&lt/li&gt
+      &ltli class=&quotnavigation&quot&gt&lta href=&quot/#reload&quot&gtHOME&lt/a&gt&lt/li&gt
+      &lt/ul&gt
+      &lt/header&gt
+      &ltmain&gt
+      &ltimg src=&quotimage/bike.jpg&quot class=&quotfullImage&quot id=&quotreload&quot&gt
+      &lt!--boxは枠緑(#00ff7f),背景白の箱(#ffffff)--&gt
+      &ltdiv class=&quotel-box&quot&gt
+      &ltdiv class=&quotshortMessage&quot&gt
+      &lth2&gtモダンなサイト、&ltbr&gt　　楽しく作ろう。&lt/h2&gt
+      &lthr&gt
+      &lt/div&gt
+      &ltdiv class=&quotaboutContainer&quot&gt
+      &lth4&gtAbout&lt/h4&gt
+      &lt/div&gt
+      &lt/div&gt
+      &lt/main&gt
+      &ltfooter&gt&ltsmall&gtCopyright © 2020 HogeHoge Inc. All Rights Reserved.&lt/small&gt&lt/footer&gt
+      &ltscript src=&quotjs/changeSize.js&quot&gt&lt/script&gt
+      &lt!--Load BootStrap--&gt
+      &ltscript src=&quotjs/bootstrap.bundle.min.js&quot crossorigin=&quotanonymous&quot&gt&lt/script&gt
+      &lt/body&gt
+    &lt/html&gt
+      </code>
+    </pre>
+  <h2>main.css</h2>
+  <hr>
+  <pre>
+      <code class="css">@import "https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400&display=swap";
+      @import url("https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap");
+
+      body {
+      max-width: 100%;
+      min-height: 100%;
+      margin: 0;
+      font-family: noto sans jp, sans-serif;
+      text-shadow: 0 0 4px 4px rgba(255, 255, 255, 0.5);
+      }
+      img {
+      max-width: 100%;
+      }
+      /*初期値からずれたらブラーをかける(rgba)*/
+      header {
+      width: 100%;
+      height: 82px;
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      background-color: rgba(255, 255, 255, 0.3);
+      animation-name: topDrop;
+      animation-duration: 1s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      }
+      @keyframes topDrop {
+      from {
+      opacity: 0;
+      transform: translateY(-100px);
+      }
+
+      to {
+      opacity: 1;
+      transform: translateY(0);
+      }
+      }
+      header a {
+      text-decoration: none;
+      color: #000000;
+      }
+      header a:hover {
+      text-decoration: underline;
+      color: #000000;
+      }
+      header ul {
+      margin: 0;
+      list-style: none;
+      padding-left: 0;
+      overflow: hidden;
+      }
+      header li {
+      float: left;
+      }
+      .el-box {
+      position: absolute;
+      bottom: 280px;
+      left: 12%;
+      }
+      .shortMessage {
+      margin: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      animation: flowing-anim 2.4s;
+      }
+      .shortMessage h2 {
+      font-size: 40px;
+      font-weight: bold;
+      }
+      @media only screen and (max-width: 435px) {
+      .shortMessage h2 {
+      color: #ffffff;
+      font-size: 40px;
+      font-weight: bold;
+      }
+      }
+      @keyframes flowing-anim {
+      0% {
+      width: 0%;
+      }
+      100% {
+      width: 100%;
+      }
+      }
+      .aboutContainer {
+      font-family: rennersemi;
+      color: #dacfad;
+      width: 130px;
+      height: 50px;
+      margin: 5px;
+      padding: 10px;
+      border: 3.5px solid #dacfad;
+      background-color: #ffffff;
+      margin-left: 4.5%;
+      animation-name: timeOpacity;
+      animation-duration: 2.2s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      }
+      .aboutContainer:hover {
+      font-family: rennersemi;
+      color: #ffffff;
+      width: 130px;
+      height: 50px;
+      margin: 5px;
+      padding: 10px;
+      border: 3.5px solid #dacfad;
+      background-color: #dacfad;
+      margin-left: 4.5%;
+      animation-name: timeOpacity;
+      animation-duration: 2.2s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+      }
+      @keyframes timeOpacity {
+      from {
+      opacity: 0;
+      }
+      to {
+      opacity: 1;
+      }
+      }
+      .aboutContainer h4 {
+      margin-top: -2px;
+      text-align: center;
+      }
+      .icon {
+      margin-left: 30px;
+      margin-top: -2px;
+      }
+      .navigation {
+      margin-right: 30px;
+      display: inline;
+      float: right;
+      margin-top: 26.5px;
+      }
+      main a {
+      text-decoration: none;
+      color: #0d6efd;
+      }
+      main a:hover {
+      text-decoration: underline;
+      color: #0d6efd;
+      }
+      footer {
+      height: 21px;
+      background-color: #eee;
+      text-align: center;
+      }
+      footer small {
+      vertical-align: middle;
+      display: inline-block;
+      }
+      </code>
+    </pre>
+  <h2>changeSize.js</h2>
+  <hr>
+  <pre>
+      <code class="javascript">const imageResize = () => {
+      document.getElementsByClassName("fullImage")[0].style.width = window.innerWidth + "px";
+      document.getElementsByClassName("fullImage")[0].style.height = window.innerHeight + "px";
+      }
+      window.onload = imageResize();
+      window.addEventListener("resize", imageResize);
+      </code>
+    </pre>
+</body>
+
+</html>
